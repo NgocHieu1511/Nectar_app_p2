@@ -7,19 +7,21 @@ const ProductCard = ({ item, text }) => {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.card}>
-      <Image source={item.image} style={styles.image} />
-      <Text style={styles.productName}>{item.name}</Text>
-      <Text style={styles.desc}>{item.desc}</Text>
-      <Text style={styles.price}>{item.price}</Text>
+    <TouchableOpacity onPress={() => navigation.navigate(text)}>
+      <View style={styles.card}>
+        <Image source={item.image} style={styles.image} />
+        <Text style={styles.productName}>{item.name}</Text>
+        <Text style={styles.desc}>{item.desc}</Text>
+        <Text style={styles.price}>{item.price}</Text>
 
-      <TouchableOpacity
-        style={styles.addBtn}
-        onPress={() => navigation.navigate(text)}
-      >
-        <Ionicons name="add" size={18} color="#fff" />
-      </TouchableOpacity>
-    </View>
+        <TouchableOpacity
+          style={styles.addBtn}
+          onPress={() => navigation.navigate(text)}
+        >
+          <Ionicons name="add" size={18} color="#fff" />
+        </TouchableOpacity>
+      </View>
+    </TouchableOpacity>
   );
 };
 const styles = StyleSheet.create({
@@ -37,8 +39,10 @@ const styles = StyleSheet.create({
   },
   image: {
     width: "100%",
-    height: 80,
+    height: 120,
     resizeMode: "contain",
+
+    paddingVertical: 30,
   },
   productName: {
     color: "#181725",

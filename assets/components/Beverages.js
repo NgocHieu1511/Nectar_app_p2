@@ -67,7 +67,7 @@ const Beverages = () => {
 
         <Text style={styles.title}>Beverages</Text>
 
-        <Ionicons name="options-outline" size={22} />
+        <Image source={require("../../assets/img/option.png")} />
       </View>
 
       {/* List */}
@@ -88,7 +88,7 @@ const Beverages = () => {
               <Text style={styles.price}>{item.price}</Text>
 
               <TouchableOpacity style={styles.addBtn}>
-                <Ionicons name="add" size={18} color="#fff" />
+                <Image source={require("../../assets/img/add.png")} />
               </TouchableOpacity>
             </View>
           </View>
@@ -103,6 +103,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     paddingHorizontal: 20,
     paddingTop: 50,
+    fontFamily: "Gilroy",
   },
 
   header: {
@@ -113,7 +114,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontFamily: "Gilroy-SemiBold",
+    fontFamily: "Gilroy-Bold",
     fontSize: 18,
     color: "#181725",
   },
@@ -136,9 +137,10 @@ const styles = StyleSheet.create({
   },
 
   name: {
-    fontFamily: "Gilroy-SemiBold",
+    fontFamily: "Gilroy-Bold",
     fontSize: 14,
     color: "#181725",
+    marginTop: 10,
   },
 
   desc: {
@@ -163,7 +165,7 @@ const styles = StyleSheet.create({
   addBtn: {
     backgroundColor: "#53B175",
     borderRadius: 15,
-    padding: 8,
+    padding: 15,
   },
 });
 

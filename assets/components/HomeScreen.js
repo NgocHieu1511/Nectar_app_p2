@@ -14,6 +14,8 @@ import ProductCard from "./ProductCard";
 import Category from "./Category";
 import TabItem from "./TabItem";
 import { useNavigation } from "@react-navigation/native";
+import Feather from "@expo/vector-icons/Feather";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
 const products = [
   {
@@ -76,7 +78,7 @@ const HomeScreen = () => {
 
         {/* Search */}
         <View style={styles.searchBox}>
-          <Ionicons name="search" size={18} color="#999" />
+          <Feather name="search" size={24} color="#181B19" />
           <TextInput placeholder="Search Store" style={styles.input} />
         </View>
 
@@ -148,6 +150,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     paddingTop: 45,
     paddingHorizontal: 25,
+    fontFamily: "Gilroy",
   },
   header: {
     alignItems: "center",
@@ -169,7 +172,7 @@ const styles = StyleSheet.create({
   locationTitle: {
     color: "#4C4F4D",
     textAlign: "center",
-    fontFamily: "Gilroy-SemiBold", // ⚠️ phải đúng tên font
+    fontFamily: "Gilroy",
     fontSize: 18,
     fontWeight: "600",
   },
@@ -204,10 +207,12 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 16,
     fontWeight: "bold",
+    fontFamily: "Gilroy",
   },
 
   seeAll: {
     color: "#53B175",
+    fontFamily: "Gilroy",
   },
 
   row: {
@@ -226,14 +231,15 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: "100%",
     height: 80,
     resizeMode: "contain",
+    padding: 20,
   },
 
   productName: {
     marginTop: 5,
     fontWeight: "500",
+    fontFamily: "Gilroy-Bold",
   },
 
   price: {

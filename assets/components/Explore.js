@@ -11,6 +11,7 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import TabItem from "./TabItem";
+import Feather from "@expo/vector-icons/Feather";
 
 const categories = [
   {
@@ -81,7 +82,7 @@ const Explore = () => {
       </View>
       {/* Search */}
       <View style={styles.searchBox}>
-        <Ionicons name="search" size={18} color="#999" />
+        <Feather name="search" size={24} color="#181B19" />
         <TextInput placeholder="Search Store" style={styles.input} />
       </View>
 
@@ -131,6 +132,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     paddingHorizontal: 20,
     paddingTop: 50,
+    fontFamily: "Gilroy",
   },
 
   header: {
@@ -139,7 +141,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontFamily: "Gilroy-SemiBold",
+    fontFamily: "Gilroy-Bold",
     fontSize: 20,
     color: "#181725",
   },
@@ -159,6 +161,7 @@ const styles = StyleSheet.create({
 
   card: {
     width: "48%",
+
     borderRadius: 18,
     paddingVertical: 20,
     paddingHorizontal: 10,
@@ -168,15 +171,16 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: 80,
-    height: 80,
+    width: 111,
+    height: 75,
     resizeMode: "contain",
-    marginBottom: 10,
+    marginBottom: 30,
+    marginTop: 10,
   },
 
   cardText: {
     textAlign: "center",
-    fontFamily: "Gilroy-SemiBold",
+    fontFamily: "Gilroy-Bold",
     fontSize: 14,
     color: "#181725",
   },

@@ -5,10 +5,16 @@ import HomeScreen from "./assets/components/HomeScreen";
 import Explore from "./assets/components/Explore";
 import ProductDetail from "./assets/components/ProductDetail";
 import Beverages from "./assets/components/Beverages";
+import { useFonts } from "expo-font";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const [loaded, error] = useFonts({
+    "Gilroy-Black": require("./assets/font/Gilroy-Black.ttf"),
+    "Gilroy-Bold": require("./assets/font/Gilroy-Bold.ttf"),
+    "Gilroy-Medium": require("./assets/font/Gilroy-Medium.ttf"),
+  });
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>

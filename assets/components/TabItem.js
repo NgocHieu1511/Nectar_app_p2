@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     marginTop: 3,
 
     textAlign: "center",
-    fontFamily: "Gilroy-SemiBold", // ⚠️ thay vì dùng fontWeight
+    fontFamily: "Gilroy-Bold",
     fontSize: 12,
   },
 });

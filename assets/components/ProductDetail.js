@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import Feather from "@expo/vector-icons/Feather";
 
 const ProductDetail = () => {
   const navigation = useNavigation();
@@ -23,7 +24,7 @@ const ProductDetail = () => {
             <Ionicons name="chevron-back" size={24} />
           </TouchableOpacity>
 
-          <Ionicons name="share-outline" size={22} />
+          <Feather name="upload" size={22} color="black" />
         </View>
 
         {/* Image */}
@@ -38,7 +39,7 @@ const ProductDetail = () => {
         <View style={styles.info}>
           <View style={styles.rowBetween}>
             <Text style={styles.title}>Naturel Red Apple</Text>
-            <Ionicons name="heart-outline" size={22} />
+            <Ionicons name="heart-outline" size={24} color="#7C7C7C" />
           </View>
 
           <Text style={styles.desc}>1kg, Price</Text>
@@ -47,7 +48,7 @@ const ProductDetail = () => {
           <View style={styles.qtyRow}>
             <View style={styles.qtyBox}>
               <TouchableOpacity onPress={() => setQty(qty > 1 ? qty - 1 : 1)}>
-                <Ionicons name="remove" size={18} color="#53B175" />
+                <Ionicons name="remove" size={18} color="#B3B3B3" />
               </TouchableOpacity>
 
               <Text style={styles.qty}>{qty}</Text>
@@ -63,24 +64,33 @@ const ProductDetail = () => {
 
         {/* Sections */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Product Detail</Text>
+          <View style={styles.sectionHeader}>
+            <Text style={styles.sectionTitle}>Product Detail</Text>
+            <Image source={require("../../assets/img/arrow-down.png")} />
+          </View>
           <Text style={styles.sectionText}>
             Apples are nutritious. Apples may be good for weight loss. apples
             may be good for your heart. As part of a healtful and varied diet.
           </Text>
         </View>
 
-        <View style={styles.sectionRow}>
+        <View style={[styles.sectionRow, styles.Nutritions]}>
           <Text style={styles.sectionTitle}>Nutritions</Text>
-          <Text style={styles.badge}>100gr</Text>
+          <View style={{ flexDirection: "row", gap: 10, alignItems: "center" }}>
+            <Text style={styles.badge}>100gr</Text>
+            <Image source={require("../../assets/img/arrow-right.png")} />
+          </View>
         </View>
 
         <View style={styles.sectionRow}>
           <Text style={styles.sectionTitle}>Review</Text>
-          <View style={{ flexDirection: "row" }}>
-            {[...Array(5)].map((_, i) => (
-              <Ionicons key={i} name="star" size={16} color="#FFB800" />
-            ))}
+          <View style={{ flexDirection: "row", gap: 10, alignItems: "center" }}>
+            <View style={{ flexDirection: "row" }}>
+              {[...Array(5)].map((_, i) => (
+                <Ionicons key={i} name="star" size={16} color="#F3603F" />
+              ))}
+            </View>
+            <Image source={require("../../assets/img/arrow-right.png")} />
           </View>
         </View>
       </ScrollView>
@@ -97,6 +107,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     padding: 20,
+    fontFamily: "Gilroy",
   },
 
   header: {
@@ -151,16 +162,28 @@ const styles = StyleSheet.create({
   qtyBox: {
     flexDirection: "row",
     alignItems: "center",
-    borderWidth: 1,
+
     borderColor: "#E2E2E2",
-    borderRadius: 15,
-    paddingHorizontal: 15,
-    paddingVertical: 5,
+
     gap: 10,
+  },
+  Nutritions: {
+    paddingBottom: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: "#E2E2E2",
+    borderEndColor: "#E2E2E2B2",
+    paddingTop: 20,
+    borderTopWidth: 1,
+    borderTopColor: "#E2E2E2",
   },
 
   qty: {
     fontSize: 16,
+    borderWidth: 1,
+    borderRadius: 15,
+    paddingHorizontal: 15,
+    paddingVertical: 5,
+    borderColor: "#E2E2E2",
   },
 
   price: {
@@ -171,10 +194,20 @@ const styles = StyleSheet.create({
 
   section: {
     marginTop: 20,
+    paddingTop: 20,
+
+    borderTopWidth: 1,
+
+    borderTopColor: "#E2E2E2B2",
+  },
+  sectionHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
 
   sectionTitle: {
-    fontFamily: "Gilroy-SemiBold",
+    fontFamily: "Gilroy-Bold",
     fontSize: 16,
     color: "#181725",
   },
@@ -191,10 +224,12 @@ const styles = StyleSheet.create({
   },
 
   badge: {
-    backgroundColor: "#F2F3F2",
+    color: "#7C7C7C",
     paddingHorizontal: 10,
-    paddingVertical: 3,
+    paddingVertical: 5,
     borderRadius: 5,
+    backgroundColor: "#EBEBEB",
+    fontSize: 9,
   },
 
   button: {
@@ -203,6 +238,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     alignItems: "center",
     marginTop: 10,
+    marginBottom: 20,
   },
 
   buttonText: {
